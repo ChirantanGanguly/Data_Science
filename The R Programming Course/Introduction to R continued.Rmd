@@ -1,0 +1,101 @@
+---
+title: "Introduction to R continued"
+author: "Chirantan Ganguly"
+date: "26/04/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction to R continued
+___
+
+## Functions: -
+
+### Getting Help
+
+While working with R if we need some additional info about what a function does, we can get detailed info about it in the following ways.
+```{r}
+  help(mean)  #asking for info about the function mean
+  ?mean       #another way of doing the same thing
+```
+
+We can also know what arguements a function takes in the following way:-
+```{r}
+  args(mean)
+```
+
+### More about FUnctions
+
+Now that we have seen a bit about the function mean(). Lets actually calculate mean()
+We can calculate mean by 2 methods:- 
+1. Matching by name: - mean(x= data)
+```{r}
+  grades<-c(8.5, 7, 9, 5.5, 6)
+  mean(x= grades)
+```
+2. Matching by position : - mean(data)
+```{r}
+mean(grades)
+```
+If our data set has missing values then mean() will throw an error if not specified as follows: -
+```{r}
+grades <- c(8.5, 7, 9, NA, 6)
+mean(grades)
+mean(x=grades, trim = 0, na.rm = TRUE)
+```
+
+### Making Your own Functions
+
+Apart from builtin functions, we can make functions of our own like: -
+```{r}
+multiply_a_b <- function(a,b){
+  return(a*b)
+}
+multiply_a_b(3,7)
+```
+
+
+## Getting your data into R
+
+One important thing before you actually do analyses on your data, is that you will need to get your data into R. R contains many functions to read in data from different formats. Some Examples are as follows: -
+
+```{r}
+cars<-read.csv("http://s3.amazonaws.com/assets.datacamp.com/course/uva/mtcars.csv")
+head(cars)
+```
+Sometimes the sperator is not what we expect it to be so we can easily change the separator by: -
+```{r}
+cars<-read.csv("http://s3.amazonaws.com/assets.datacamp.com/course/uva/mtcars_semicolon.csv", sep = ';')
+head(cars)
+```
+
+## Working directories in R
+
+If you would work with R studio on your own computer, you would probably like to read in local files.
+
+\- getwd(): This function will retrieve the current working directory for the user
+\- setwd(): This functions allows the user to set her own working directory
+
+```{r}
+getwd()
+setwd("F:/Education/College/Computer Science/Data_Science")
+```
+
+## Checking files in your working directory
+
+```{r}
+list.files()
+cars<-read.csv("mtcars_semicolon.csv", sep=';')
+head(cars)
+```
+
+## Importing R packages
+
+```{r}
+library(ggplot2)
+require(ggplot2)
+```
+
