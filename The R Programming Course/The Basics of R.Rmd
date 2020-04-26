@@ -1,0 +1,141 @@
+---
+title: "The Basics of R"
+author: "Chirantan Ganguly"
+date: "26/04/2020"
+output: html_document
+---
+# The Basics Of R (Data Camp)
+I have tried to incorporate a summary of The Basics of R in this file for future reference and practice.
+
+## Little Arithmetics with R
+
+```{r}
+  3+4
+  5-5
+  3*5
+  (5+5)/2
+  2^5
+  28%%6
+```
+
+## Basic Data Types
+
+```{r}
+  my_numeric<- 42
+  class(my_numeric)
+  my_character<-"forty two"
+  class(my_character)
+  my_logical<-is.character(my_character)
+  my_logical
+  class(my_logical)
+```
+
+## Coercion
+
+```{r}
+  var1<-TRUE
+  var2<-3
+  var3<-"15"
+  var1_char<-as.character((var1))
+  var1_char
+  var2_log<-as.logical((var2))
+  var2_log
+  var3_num<-as.numeric(var3)
+  var3_num
+```
+
+## Vectors
+
+```{r}
+  numeric_vector<-c(1,2.3,4.2,5,10,49,67)
+  numeric_vector
+  character_vector<-c("Chirantan","Ganguly","Calcutta")
+  character_vector
+  log_vector<-c(TRUE, FALSE, FALSE, TRUE)
+  log_vector
+```
+
+**Accessing Vector Elements**
+
+```{r}
+  numeric_vector[3]
+  character_vector[c(1,3)]
+  log_vector[c(1:3)]
+```
+
+## Selection by Comparison
+
+```{r}
+  larger_than_ten<-numeric_vector>10
+  larger_than_ten
+  numeric_vector[larger_than_ten]
+```
+
+## Matrices
+
+```{r}
+  m<-matrix(1:20, byrow=TRUE, nrow=5, ncol=4)
+  m
+```
+
+## Factor
+
+**Used to fix the number of possible values a vector can take**
+```{r}
+  student_status<-c("student","not student", "not student", "student", "student", "student")
+  categorical_student<-factor(student_status)
+  categorical_student
+```
+
+## DataFrames
+
+```{r}
+mtcars
+```
+
+**Inspecting DataFrames**
+
+```{r}
+  head(mtcars)
+  tail(mtcars)
+  str(mtcars)
+  dim(mtcars)
+  colnames(mtcars)
+```
+
+## Contructing Datafame od your own
+
+```{r}
+planets <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
+type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
+diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)  #relative to earth
+rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)   #relative to earth
+rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
+planet_df<-data.frame(planets, type, diameter, rotation, rings)
+planet_df
+```
+
+## Indexing and Selecting Columns from dataframe
+
+```{r}
+planet_df[1,c(2,3)]
+planet_df$diameter
+```
+
+## Lists
+
+```{r}
+my_vector <- 1:10 
+my_matrix <- matrix(1:9, ncol = 3)
+my_df <- mtcars[1:10,]
+my_list<-list(my_vector, my_matrix, my_df)
+my_list
+```
+
+## Selecting Elements from a List
+
+```{r}
+my_list[2]
+my_list[[3]][,1]
+```
+
