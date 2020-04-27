@@ -1,0 +1,129 @@
+---
+title: "Exploring Data"
+author: "Chirantan Ganguly"
+date: "26/04/2020"
+output: html_document
+---
+## Checking the dimensions of your data
+
+The first value returned by dim() is the number of cases (rows) and the second value is the number of variables (columns).
+```{r}
+dim(mtcars)
+```
+
+## Data Structures
+
+Using the str() function we can look at the structure of a dataset. str() takes the name of the data set as its first argument. The output shows the variable names, their type, and the values of the first observations.
+```{r}
+str(mtcars)
+```
+
+## Recoding Variables
+
+Change mpg(miles per gallon) from a continuous variable to a categorical variable indicating "high" if mpg>=20 otherwise "low" and add this as another variable to mtcars
+```{r}
+mpgcategory<-mtcars$mpg
+mpgcategory[mpgcategory>=20]<-"high"
+mpgcategory[mpgcategory<20]<-"low"
+mtcars$mpgfactor<-as.factor(mpgcategory)
+mtcars
+```
+
+## Examining Frequencies
+
+Let us now find the frequencies of number of cars with auto transmission and manual transmission
+```{r}
+table<-table(mtcars$am)
+table
+```
+We get the no of O's and the number of 1's
+
+## Making Bar Graphs
+
+We easily can make graphs to visualize our data. Let's visualize the number of manual and automatic transmissions in our car sample through a bar graph, using the function barplot().
+```{r}
+barplot(table)
+```
+
+### Labelling a Bar Graph
+
+```{r}
+barnames <- c("automatic", "manual")
+barplot(table, ylab = "number of cars", names.arg = barnames, main="Transmission", ylim=c(0,20))
+```
+
+## Histograms
+It can be useful to plot frequencies as histograms to visualize the spread of our data. Lets plot a Histogram of the Number of Carburetors: -
+```{r}
+hist(mtcars$carb, main="Carburetors", xlab="Number of Carburetors", ylim = c(0,20))
+```
+
+**Formating your histogram**
+```{r}
+hist(mtcars$carb, main = "Carburetors", ylim=c(0,20), col="red", xlab="Number of Carburetors")
+```
+
+## Mean and Median
+Calculating the mean and median are very important for understanding the central tendancy of a given data.
+Lets measure the mean() and the median() of mpg
+```{r}
+mean(mtcars$mpg)
+median(mtcars$mpg)
+```
+
+## Mode
+Lets use sort() and table() to find the mode of the carb variable of mtcars.
+
+```{r}
+sort(table(mtcars$carb), decreasing = T)
+```
+
+## Range
+The range of various values in a dataset is particularly important because it tells us about the dispersion of the data we use max() and min() to find the range: -
+```{r}
+x <-min(mtcars$mpg)
+y <-max(mtcars$mpg)
+y-x
+```
+
+## Quartiles
+We can measure the quartiles in our dataset using the function quantile: -
+```{r}
+quantile(mtcars$mpg)
+```
+
+
+## IQR and Boxplot
+To better visualise your data's quartiles you can create a boxplot using the function boxplot(). Similarly, you can calculate the interquartile range manually by subtracting the value of the third quartile from the value of the first quartile, or we can use the function IQR()
+```{r}
+boxplot(mtcars$qsec)
+```
+```{r}
+IQR(mtcars$qsec)
+```
+
+## IQR outliers
+We can find outliers by first finding the first and the third quartile using the function quantile() and there after we can calculate the threshold value for outliers below the first Quartile and above the second Quartile as follow: -
+```{r}
+quantile(mtcars$qsec)
+#The threshold value of outliers below the first quartile is
+16.8925-1.5*IQR(mtcars$qsec)
+#The threshold value of outliers above the third quartile is
+18.9+1.5*IQR(mtcars$qsec)
+```
+
+## Standard Deviation
+We can also measure the spread of data through the standard deviation. We can calculate these using the function sd()
+```{r}
+IQR(mtcars$hp)
+sd(mtcars$hp)
+IQR(mtcars$mpg)
+sd(mtcars$mpg)
+```
+
+## Calculating Z Scores
+We can calculate the z-score for a given value (X) as (X - mean) / standard deviation.
+```{r}
+(mtcars$mpg-mean(mtcars$mpg))/sd(mtcars$mpg)
+
+```
