@@ -1,0 +1,84 @@
+---
+title: "Sampling distributions"
+author: "Chirantan Ganguly"
+date: "29/04/2020"
+output: html_document
+---
+## Sampling From the Population
+Lets create a Simple Random Sample of size 100 of birth year from the available population of 21699 baseball players, and find the mean of the sample: -
+```{r}
+plyr<-read.csv("https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/plyr/baseball.csv")
+head(plyr)
+first_sample<-sample(plyr$year, size=100)
+first_sample
+mean(first_sample)
+```
+
+## Mean of the sampling distribution
+The mean of a sample that you take from the population will never be very far away from the population mean (provided that you randomly sample from the population). Furthermore, the mean of the sampling distribution, that is the mean of the mean of all the samples that we took from the population will never be far away from the population mean. Let's observe this in practice.
+```{r}
+sample_means<-NULL
+for(i in 1:500){
+  sample_means[i]<-mean(sample(plyr$year, size=200))
+}
+# The Sampling Mean
+mean(sample_means)
+#The Population mean
+mean(plyr$year)
+```
+
+## Standard deviation of the sampling distribution
+In the previous weeks you have become familiar with the concept of standard deviation. You may recall that this concept refers to the spread of a distribution. In R you can calculate the standard deviation using the function sd().
+
+However, the standard deviation of the sampling distribution is called the standard error. The standard error is calculated slightly differently from the standard deviation. The formula for the standard error can be found below:
+
+s=σ/√n
+In this formula, the sigma refers to the standard deviation, while n refers to the sample size of the sample.
+```{r}
+population_sd<-sd(plyr$year)
+population_sd
+sampling_sd<-population_sd/(200^0.5)
+sampling_sd
+```
+
+## The central limit theorem
+**"Provided that the sample size is sufficiently large, the sampling distribution of the sample mean is approximately normally distributed even if the variable of interest is not normally distributed in the population"**
+```{r}
+hist(plyr$year)
+```
+We can see clearly that the birth year of players is clearly left skewed. However when we plot the sampling mean, we find that its normally distributed: -
+```{r}
+hist(sample_means, col="grey")
+```
+
+## Zscores
+We already know the concept of z-scores, so lets find the z score of a player born in 1983: -
+```{r}
+z_score<-(1983-mean(plyr$year))/population_sd
+z_score
+```
+
+## Calculating areas with subjects
+In R we can use the pnorm() function to calculate the probability of obtaining a given score or a more extreme score in the population. Basically this calculate an area under the bell curve.
+```{r}
+pnorm(z_score, lower.tail=TRUE)
+pnorm(z_score, lower.tail=FALSE)
+```
+
+## Sampling distributions and proportions
+
+The formula of Sample Standard deviation is : - √(pi(1-pi)/n)
+pi is the sample proportion
+```{r}
+proportion_hipsters <- 0.10
+sample_sd<-(0.1*0.9/200)^0.5
+sample_sd
+```
+```{r}
+# calculate the standard deviation of the sampling distribution
+sample_sd <- sqrt((0.10 * (1 - 0.10)) / 200)
+
+# calculate the probability
+pnorm(0.13, mean = 0.10, sd = sample_sd, lower.tail = FALSE)
+```
+
