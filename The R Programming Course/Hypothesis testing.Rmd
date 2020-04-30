@@ -1,0 +1,81 @@
+---
+title: "Hypothesis testing"
+author: "Chirantan Ganguly"
+date: "30/04/2020"
+output: html_document
+---
+## Significance testing: one-sided Finding Cutoff
+Consider the example mentioned above with a mean beard length of 25 and a standard error of 0.55, α of 0.05. Reproduce the value of 25.90 using the qnorm() function and assign it to the variable cut_off. Make sure to round every value in this exercise to two digits.
+```{r}
+cut_off<-round(qnorm(0.95, 25, 0.55),2)
+cut_off
+```
+## Significance testing: Two-sided Finding Cutoff
+Considering the same case as above but both sided testing fild the lower and upper cut off:- 
+```{r}
+lower_cut_off<-round(qnorm(0.025,25,0.55),2)
+upper_cut_off<-round(qnorm(0.025,25,0.55,lower.tail=F),2)
+lower_cut_off
+upper_cut_off
+```
+
+## Significance testing
+Let's go back to our example of scandinavian hipsters. Here we had a population mean of 25 and a population standard deviation of 3.5. Because we were taking samples of 40 subjects from this population, we were actually working with the standard error which was 3.5 /√40. Imagine we found a sample mean of exactly 26 and a corresponding Z score of 1.81. Whether this result is significant depends on the test we do. If we would do a one-sided hypothesis test against a 5% significance level, we would only have to test for the effect in one direction. As such, we could check the following: P(>1.81). In order to do this, we could use our pnorm() function which calculates a probability that corresponds to a quantile or z score. We could use it in the following way: pnorm(1.81, lower.tail = FALSE). We set the lower tail equal to FALSE because pnorm() calculates the cumulative probability until the value of 1.81 and we want to know the probability of finding a value of 1.81 or larger. The functions yields a p value of 0.035 which is smaller than 0.05.
+```{r}
+z_value <- (25.95 - 25) / (3.5 / sqrt(40))
+p_value <- pnorm(z_value, lower.tail = FALSE)
+p_value
+```
+
+## Hypothesis testing and the binomial distribution
+Imagine we have a student who got 12 out of 25 questions correctly and the probability of guessing a question correctly is 0.20. Calculate the probability of answering 12 or more questions correctly given that the student is merely guessing and store this in the variable p_value. Round this probability to two digits. Remember that we are doing a one-sided hypothesis test.
+Print p_value to the console
+Assign your conclusion whether H0 (the student is merely guessing) is accepted or rejected to the variable conclusion, that is, assign either the value "accepted" or the value "rejected" to the variable conclusion.
+```{r}
+p_value<-1-round(pbinom(11,25,0.20),2)
+p_value
+conclusion<-"rejected"
+```
+
+In the last exercise, we did a hypothesis test by calculating the p value by using the pbinom() function. However, a more widely used way to do so is to calculate the mean (the expected probability) of our distribution and its standard deviation and to verify how many standard deviations the observed probability is removed from the expected probability (the z score). Because we usually test our hypothesis using a sample, we work with the sampling distribution instead of the population distribution. This means that we use the standard error, rather than the standard deviation. Recall
+that the formula for the standard error for a binomial distribution was the following √(p(1−p)/n)
+```{r}
+average <- 0.20
+se <- round(sqrt((0.20 * 0.80) / 25), 2)
+z_value <- round((((12 / 25) - 0.2) / se), 2)
+p_value <- round(pnorm(z_value, lower.tail = FALSE), 2)
+p_value
+```
+
+## The t distribution
+Often when comparing means of continuous variables we use a t distribution instead of the normal distribution. The main reason to use the t distribution here is because we often have to deal with small samples.
+
+Now image the following example of height: They say that Dutch people are among the tallest in the world with an average male height of 185 centimeters with a standard deviation of 5 centimers. We take a sample of 50 males from this population and find an average height of 186.5 centimeters which is above the population mean. Imagine we want to do a one-sided hypothesis test where we check whether the population mean of Dutch male height is larger than 185 and we use a significance level of 0.05. There are several things we can do now and 1 thing that we must do.
+
+Firstly, we need to calculate the degrees of freedom which refers to the amount of independent samples in the set of data, which is equal to the sample size - 1. Thus, the degrees of freedom here is 50−1=49. Secondly, we could either calculate the associated p value or, alternatively, we could calculate the critical cut-off value. The critical cut-off value in this case is the 95th percentile as we are doing a one-sided hypothesis test.
+```{r}
+cut_off<-round(qt(0.95,49),2)
+cut_off
+```
+
+In the last exercise we calculated the critical value using the qt() function. However, we still do not know our t test statistics and whether this statistics is larger than the cut-off value. Let's calculate the t value in this exercise and see which p value is associated with it. The formula for the standard error is the following:
+
+σ/(√n)
+The formula for the t value is the same as the formula for the Z value:
+t=x¯−μ/se
+```{r}
+se <- round(5 / sqrt(50), 2)
+t_value <- round((186.5 - 185) / se, 2)
+p_value <- round(pt(t_value, df = 49, lower.tail = FALSE), 2)
+p_value
+```
+## Confidence interval and significance testing
+Do you remember how to calculate confidence intervals? If not, let's shortly recap this. You can calculate a confidence interval, say a 95% confidence interval, by taking the mean and adding and subtracting its standard error multiplied by the given t value or z value. Usually confidence intervals are expressed as a two-sided range as we will also do in this exercise.
+
+A 95% confidence intervals can be interpreted as that we are 95% confident that this interval will contain our population statistic. Take our last example where we found a standard error of 0.71, a population mean of 185, and a sample mean of 186.5. As the sample size was 50, our relevant degrees of freedom were 49.
+```{r}
+t_value <- round(qt(0.975, df = 49), 2)
+conf_interval <- round(186.5 + c(-1, 1) * t_value * 0.71, 2)
+conf_interval
+```
+
