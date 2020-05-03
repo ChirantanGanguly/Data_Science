@@ -7,41 +7,40 @@
 
 \- **Roger D. Peng**
      
-     Professor, Biostatistics 
+Professor, Biostatistics 
      
-     Johns Hopkins University
+Johns Hopkins University
      
-     [University Website](https://www.biostat.jhsph.edu/~rpeng/)
+- [University Website](https://www.biostat.jhsph.edu/~rpeng/)
      
-      Twitter:- [rdpeng](https://twitter.com/rdpeng)
+- Twitter:- [rdpeng](https://twitter.com/rdpeng)
       
-      [a link](https://github.com/user/repo/blob/branch/other_file.md)
 
 \- **Jeff Leek**
      
-     Professor, Biostatistics and Oncology
+Professor, Biostatistics and Oncology
      
-     Johns Hopkins University
+Johns Hopkins University
      
-      [Twitter](https://twitter.com/jtleek)
+- [Twitter](https://twitter.com/jtleek)
      
-      [Github](https://github.com/jtleek)
-     
-      [Web](http://jtleek.com/)
+- [Github](https://github.com/jtleek)
+
+- [Web](http://jtleek.com/)
 
 \- **Brian Caffo**
       
-      Professor, Biostatistics
+Professor, Biostatistics
       
-      Johns Hopkins University
+Johns Hopkins University
       
-       [Web](https://sites.google.com/view/bcaffo/home)
+- [Web](https://sites.google.com/view/bcaffo/home)
       
-       [Youtube](https://www.youtube.com/channel/UCdjFpvS8lvT2MJVthOUvlyg)
+- [Youtube](https://www.youtube.com/channel/UCdjFpvS8lvT2MJVthOUvlyg)
       
-       [Github](https://github.com/bcaffo)
+ - [Github](https://github.com/bcaffo)
       
-      \- [LeanPub](https://leanpub.com/u/bcaffo)
+ - [LeanPub](https://leanpub.com/u/bcaffo)
       
       
       
