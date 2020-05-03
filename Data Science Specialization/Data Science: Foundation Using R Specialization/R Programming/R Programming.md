@@ -14,6 +14,8 @@
      [University Website](https://www.biostat.jhsph.edu/~rpeng/)
      
       Twitter:- [rdpeng](https://twitter.com/rdpeng)
+      
+      [a link](https://github.com/user/repo/blob/branch/other_file.md)
 
 \- **Jeff Leek**
      
