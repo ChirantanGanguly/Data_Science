@@ -5,15 +5,15 @@
 
 ## Instructors:-
 
-/- **Roger D. Peng**
+\- **Roger D. Peng**
      
      Professor, Biostatistics 
      
      Johns Hopkins University
      
-     \- [University Website](https://www.biostat.jhsph.edu/~rpeng/)
+     [University Website](https://www.biostat.jhsph.edu/~rpeng/)
      
-     \- Twitter:- [rdpeng](https://twitter.com/rdpeng)
+      Twitter:- [rdpeng](https://twitter.com/rdpeng)
 
 \- **Jeff Leek**
      
@@ -21,11 +21,11 @@
      
      Johns Hopkins University
      
-     \- [Twitter](https://twitter.com/jtleek)
+      [Twitter](https://twitter.com/jtleek)
      
-     \- [Github](https://github.com/jtleek)
+      [Github](https://github.com/jtleek)
      
-     \- [Web](http://jtleek.com/)
+      [Web](http://jtleek.com/)
 
 \- **Brian Caffo**
       
@@ -33,11 +33,11 @@
       
       Johns Hopkins University
       
-      \- [Web](https://sites.google.com/view/bcaffo/home)
+       [Web](https://sites.google.com/view/bcaffo/home)
       
-      \- [Youtube](https://www.youtube.com/channel/UCdjFpvS8lvT2MJVthOUvlyg)
+       [Youtube](https://www.youtube.com/channel/UCdjFpvS8lvT2MJVthOUvlyg)
       
-      \- [Github](https://github.com/bcaffo)
+       [Github](https://github.com/bcaffo)
       
       \- [LeanPub](https://leanpub.com/u/bcaffo)
       
@@ -54,8 +54,8 @@ Follow Me: -
      
      University of Calcutta, India
      
-     \- [LinkedIn](https://www.linkedin.com/in/chirantan-ganguly-88393118b/)
+      [LinkedIn](https://www.linkedin.com/in/chirantan-ganguly-88393118b/)
      
-     \- [Github](https://github.com/ChirantanGanguly)
+      [Github](https://github.com/ChirantanGanguly)
      
-     \- [Twitter](https://twitter.com/ChirantanGang10)
+      [Twitter](https://twitter.com/ChirantanGang10)
