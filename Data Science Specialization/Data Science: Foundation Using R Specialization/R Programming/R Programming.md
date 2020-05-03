@@ -45,18 +45,18 @@ Johns Hopkins University
       
       
       
-Follow Me: -
+##Follow Me: -
 
-\- **Chirantan Ganguly**
+ **Chirantan Ganguly**
      
-     Data Science Enthusiast
+ Data Science Enthusiast
      
-     Student, BTech in Electronics and Communication Engineering
+ Student, BTech in Electronics and Communication Engineering
      
-     University of Calcutta, India
+ University of Calcutta, India
      
-      [LinkedIn](https://www.linkedin.com/in/chirantan-ganguly-88393118b/)
+- [LinkedIn](https://www.linkedin.com/in/chirantan-ganguly-88393118b/)
      
-      [Github](https://github.com/ChirantanGanguly)
+- [Github](https://github.com/ChirantanGanguly)
      
-      [Twitter](https://twitter.com/ChirantanGang10)
+- [Twitter](https://twitter.com/ChirantanGang10)
