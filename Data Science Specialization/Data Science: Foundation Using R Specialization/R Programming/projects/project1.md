@@ -32,6 +32,22 @@ pollutantmean <- function(directory, pollutant, id= 1:332){
   
   #Returning the mean
   mean(clean)
+  
+  
+
+# Example usage
+source("pollutantmean.R")
+pollutantmean("specdata", "sulfate", 1:10)
+
+#Solution
+[1] 4.064128
+
+# Example usage
+source("pollutantmean.R")
+pollutantmean("specdata", "nitrate", 70:72)
+
+#Solution
+[1] 1.706047
 }
 ```
 
@@ -61,6 +77,19 @@ complete<-function(directory,id=1:332){
   data.frame(id,nobs)
 }
 
+
+
+#Example usage
+source("complete.R")
+complete("specdata", c(2, 4, 8, 10, 12))
+
+#Solution
+   id nobs
+ 1  2 1041
+ 2  4  474
+ 3  8  192
+ 4 10  148
+ 5 12   96
 ```
 
 ### Part 3 ([corr.R](https://github.com/ChirantanGanguly/datasciencecoursera/blob/master/Data%20Science%20Specialization/Data%20Science:%20Foundation%20Using%20R%20Specialization/R%20Programming/projects/corr.R))
@@ -96,4 +125,14 @@ corr<-function(directory,threshold=0){
   #Returning the vector co_vect
   co_vect
 }
+
+
+# Example Usage
+source("corr.R")
+source("complete.R")
+cr <- corr("specdata", 150)
+head(cr)
+
+#Solution
+[1] -0.01895754 -0.14051254 -0.04389737 -0.06815956 -0.12350667 -0.07588814
 ```
