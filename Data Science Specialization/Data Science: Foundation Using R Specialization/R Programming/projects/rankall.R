@@ -116,5 +116,6 @@ rankall <- function(outcome, num=1) {
     
   }
   answer<-data.frame(oa,x)
+  colnames(answer)<-c("hospital","state")
   return(answer)
 }
