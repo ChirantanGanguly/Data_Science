@@ -19,7 +19,7 @@ outcome[,11]<-as.numeric(outcome[,11])
 hist(outcome[,11],xlab="Deaths",ylim=c(0,900),
      main="30-day mortality rates for heart attack",col=8)
 ```
-![](https://github.com/ChirantanGanguly/datasciencecoursera/blob/master/Data%20Science%20Specialization/Data%20Science:%20Foundation%20Using%20R%20Specialization/R%20Programming/projects/Hospital_30_day_death.png)
+![](https://github.com/ChirantanGanguly/datasciencecoursera/blob/master/Data%20Science%20Specialization/Data%20Science:%20Foundation%20Using%20R%20Specialization/R%20Programming/projects/Rplot.png)
 ###  Part 2 Finding the best hospital in a state ([best.R](https://github.com/ChirantanGanguly/datasciencecoursera/blob/master/Data%20Science%20Specialization/Data%20Science:%20Foundation%20Using%20R%20Specialization/R%20Programming/projects/best.R))
 ```R
 best <- function(state, outcome) {
@@ -79,6 +79,22 @@ best <- function(state, outcome) {
     return(out)
   }
 }
+
+
+#Example Usage
+> best("TX", "heart attack")
+[1] "CYPRESS FAIRBANKS MEDICAL CENTER"
+> best("TX", "heart failure")
+[1] "FORT DUNCAN MEDICAL CENTER"
+> best("MD", "heart attack")
+[1] "JOHNS HOPKINS HOSPITAL, THE"
+> best("MD", "pneumonia")
+[1] "GREATER BALTIMORE MEDICAL CENTER"
+> best("BB", "heart attack")
+Error in best("BB", "heart attack") : invalid state
+> best("NY", "hert attack")
+Error in best("NY", "hert attack") : invalid outcome
+
 ```
 
 ###  Part 3 Ranking hospitals by outcome in a state ([rankhospital.R](https://github.com/ChirantanGanguly/datasciencecoursera/blob/master/Data%20Science%20Specialization/Data%20Science:%20Foundation%20Using%20R%20Specialization/R%20Programming/projects/rankhospital.R))
@@ -179,6 +195,16 @@ rankhospital <- function(state, outcome, num=1) {
     return(out[num-length(which(ill<z))])
   }
 }
+
+
+#Example Usage
+> rankhospital("TX", "heart failure", 4)
+[1] "DETAR HOSPITAL NAVARRO"
+> rankhospital("MD", "heart attack", "worst")
+[1] "HARFORD MEMORIAL HOSPITAL"
+> rankhospital("MN", "heart attack", 5000)
+[1] NA
+
 ```
 
 ###  Part 4 Ranking hospitals in all states ([rankall.R](https://github.com/ChirantanGanguly/datasciencecoursera/blob/master/Data%20Science%20Specialization/Data%20Science:%20Foundation%20Using%20R%20Specialization/R%20Programming/projects/rankall.R))
