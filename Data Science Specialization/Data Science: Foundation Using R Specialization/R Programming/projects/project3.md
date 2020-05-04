@@ -19,7 +19,7 @@ outcome[,11]<-as.numeric(outcome[,11])
 hist(outcome[,11],xlab="Deaths",ylim=c(0,900),
      main="30-day mortality rates for heart attack",col=8)
 ```
-![](https://github.com/ChirantanGanguly/datasciencecoursera/blob/master/Data%20Science%20Specialization/Data%20Science:%20Foundation%20Using%20R%20Specialization/R%20Programming/projects/Hospital_30_day_death.pdf)
+![](https://github.com/ChirantanGanguly/datasciencecoursera/blob/master/Data%20Science%20Specialization/Data%20Science:%20Foundation%20Using%20R%20Specialization/R%20Programming/projects/Hospital_30_day_death.png)
 ###  Part 2 Finding the best hospital in a state ([best.R](https://github.com/ChirantanGanguly/datasciencecoursera/blob/master/Data%20Science%20Specialization/Data%20Science:%20Foundation%20Using%20R%20Specialization/R%20Programming/projects/best.R))
 ```R
 best <- function(state, outcome) {
