@@ -32,7 +32,7 @@ pollutantmean <- function(directory, pollutant, id= 1:332){
   
   #Returning the mean
   mean(clean)
-  
+  }
   
 
 # Example usage
@@ -48,7 +48,7 @@ pollutantmean("specdata", "nitrate", 70:72)
 
 #Solution
 [1] 1.706047
-}
+
 ```
 
 ### Part 2 ([complete.R](https://github.com/ChirantanGanguly/datasciencecoursera/blob/master/Data%20Science%20Specialization/Data%20Science:%20Foundation%20Using%20R%20Specialization/R%20Programming/projects/complete.R))
