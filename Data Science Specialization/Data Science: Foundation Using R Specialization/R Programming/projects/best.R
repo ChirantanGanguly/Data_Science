@@ -18,7 +18,9 @@ best <- function(state, outcome) {
     ill<-ill[st==state]
     hosp<-hosp[st==state]
     st<-st[st==state]
-    return(hosp[which.min(ill)])
+    out<-hosp[which(ill==min(ill))]
+    out<-sort(out)
+    return(out)
   }
   
   ## Return hospital name in that state with lowest 30-day death rate of Heart Failure
@@ -32,7 +34,9 @@ best <- function(state, outcome) {
     ill<-ill[st==state]
     hosp<-hosp[st==state]
     st<-st[st==state]
-    return(hosp[which.min(ill)])
+    out<-hosp[which(ill==min(ill))]
+    out<-sort(out)
+    return(out)
   }
   
   ## Return hospital name in that state with lowest 30-day death rate of Pneumonia
@@ -46,6 +50,8 @@ best <- function(state, outcome) {
     ill<-ill[st==state]
     hosp<-hosp[st==state]
     st<-st[st==state]
-    return(hosp[which.min(ill)])
+    out<-hosp[which(ill==min(ill))]
+    out<-sort(out)
+    return(out)
   }
 }
