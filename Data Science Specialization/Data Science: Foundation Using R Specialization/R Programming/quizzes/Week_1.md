@@ -19,11 +19,11 @@ Question 3
 In R the following are all atomic data types EXCEPT
 
 ### Answer
--list
--array
--data.frame
--table
--matrix
+- list
+- array
+- data.frame
+- table
+- matrix
 
 Question 4
 ----------
@@ -58,15 +58,15 @@ Question 8
 Suppose I have a list defined as x <- list(2, "a", "b", TRUE). What does x[[2]] give me?
 
 ### Answer
--a character vector containing the letter "a".
--a character vector of length 1.
+- a character vector containing the letter "a".
+- a character vector of length 1.
 
 Question 9
 ----------
 Suppose I have a vector x <- 1:4 and a vector y <- 2:3. What is produced by the expression x + y?
 
 ### Answer
-an integer vector with elements 3, 5, 5, 7.
+- an integer vector with elements 3, 5, 5, 7.
 
 Question 10
 -----------
