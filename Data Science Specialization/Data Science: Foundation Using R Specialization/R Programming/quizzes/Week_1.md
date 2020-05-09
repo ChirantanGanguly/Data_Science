@@ -10,9 +10,9 @@ Question 2
 The definition of free software consists of four freedoms (freedoms 0 through 3). Which of the following is NOT one of the freedoms that are part of the definition?
 
 ### Answer
--The freedom to sell the software for any price.
--The freedom to restrict access to the source code of the software.
--The freedom to prevent users from using the software for undesirable purposes.
+- The freedom to sell the software for any price.
+- The freedom to restrict access to the source code of the software.
+- The freedom to prevent users from using the software for undesirable purposes.
 
 Question 3
 ----------
