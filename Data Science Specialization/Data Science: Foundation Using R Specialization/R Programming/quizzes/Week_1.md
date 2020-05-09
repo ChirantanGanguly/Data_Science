@@ -3,7 +3,7 @@ Question 1
 R was developed by statisticians working at...
 
 ### Answer
-The University of Auckland
+- The University of Auckland
 
 Question 2
 ----------
@@ -82,7 +82,7 @@ Question 11
 In the dataset provided for this Quiz, what are the column names of the dataset?
 
 ### Answer
-Ozone, Solar.R, Wind, Temp, Month, Day
+- Ozone, Solar.R, Wind, Temp, Month, Day
 
 ```R
 > data<-read.csv("hw1_data.csv")
@@ -108,7 +108,7 @@ Question 13
 How many observations (i.e. rows) are in this data frame?
 
 ### Answer
-153
+- 153
 
 ```R
 > nrow(data)
@@ -134,7 +134,7 @@ Question 15
 What is the value of Ozone in the 47th row?
 
 ### Answer
-21
+- 21
 
 ```R
 > data$Ozone[47]
@@ -146,7 +146,7 @@ Question 16
 How many missing values are in the Ozone column of this data frame?
 
 ### Answer
-37
+- 37
 
 ```R
 > k<-is.na(data$Ozone)
@@ -160,7 +160,7 @@ Question 17
 What is the mean of the Ozone column in this dataset? Exclude missing values (coded as NA) from this calculation.
 
 ### Answer
-42.1
+- 42.1
 
 ### Explanation
 The 'mean' function can be used to calculate the mean.
@@ -175,7 +175,7 @@ Question 18
 Extract the subset of rows of the data frame where Ozone values are above 31 and Temp values are above 90. What is the mean of Solar.R in this subset?
 
 ### Answer
-212.8
+- 212.8
 
 ```R
 > z<-data$Solar.R[data$Ozone>31 & data$Temp>90]
@@ -188,7 +188,7 @@ Question 19
 What is the mean of "Temp" when "Month" is equal to 6?
 
 ### Answer
-79.1
+- 79.1
 
 ### Explanation
 
@@ -202,7 +202,7 @@ Question 20
 What was the maximum ozone value in the month of May (i.e. Month = 5)?
 
 ### Answer
-115
+- 115
 
 ### Explantion
 
